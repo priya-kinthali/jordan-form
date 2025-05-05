@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 (2025-05-05)
+
+### Bug fixes
+
+- Install sympy (#2) ([`31a3741`](https://github.com/34j/jordan-form/commit/31a374180a46fc9caa66123db15edbe56f2b1d02))
+
 ## v0.1.0 (2025-05-05)
 
 ### Features
