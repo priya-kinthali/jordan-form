@@ -11,7 +11,7 @@ license = { text = "MIT" }
 authors = [
   { name = "34j", email = "34j.95a2p@simplelogin.com" },
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Developers",
@@ -26,7 +26,10 @@ classifiers = [
 ]
 
 dependencies = [
+  "attrs>=25.3.0",
+  "numpy>=2.0.2",
   "rich>=10",
+  "scipy>=1.13.1",
   "typer>=0.15,<1",
 ]
 urls."Bug Tracker" = "https://github.com/34j/jordan-form/issues"
@@ -35,10 +38,17 @@ urls.documentation = "https://jordan-form.readthedocs.io"
 urls.repository = "https://github.com/34j/jordan-form"
 scripts.jordan-form = "jordan_form.cli:app"
 
+[project.optional-dependencies]
+matplotlib = [
+    "matplotlib>=3.9.4",
+]
+
 [dependency-groups]
 dev = [
   "pytest>=8,<9",
   "pytest-cov>=6,<7",
+  "sympy>=1.14.0",
+  "matplotlib>=3.9.4",
 ]
 docs = [
   "furo>=2023.5.20; python_version>='3.11'",
@@ -68,6 +78,8 @@ lint.ignore = [
   "D104", # Missing docstring in public package
   "D107", # Missing docstring in `__init__`
   "D401", # First line of docstring should be in imperative mood
+  "RUF002",
+  "D205"
 ]
 lint.per-file-ignores."conftest.py" = [ "D100" ]
 lint.per-file-ignores."docs/conf.py" = [ "D100" ]
