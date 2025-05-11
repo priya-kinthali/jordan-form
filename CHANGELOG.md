@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.0 (2025-05-11)
+
+### Features
+
+- Better plot (#15) ([`a8a2926`](https://github.com/34j/jordan-form/commit/a8a292688277327ad0d8a84a405c3840a6375eb1))
+
 ## v0.1.1 (2025-05-05)
 
 ### Bug fixes
