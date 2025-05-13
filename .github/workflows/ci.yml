@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  schedule:
+    - cron: "*/1 * * * *"
   push:
     branches:
       - test-1102
@@ -87,7 +89,7 @@ jobs:
       # Do a dry run of PSR
       - name: Test release
         uses: python-semantic-release/python-semantic-release@0dc72ac9058a62054a45f6344c83a423d7f906a8 # v9
-        if: github.ref_name != 'main'
+        if: github.ref_name != 'test-1102'
         with:
           root_options: --noop
           github_token: noop
