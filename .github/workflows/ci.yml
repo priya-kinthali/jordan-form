@@ -98,7 +98,7 @@ jobs:
       - name: Release
         uses: python-semantic-release/python-semantic-release@0dc72ac9058a62054a45f6344c83a423d7f906a8 # v9
         id: release
-        if: github.ref_name == 'main'
+        if: github.ref_name == 'test-1102'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
