@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - test-1102
   pull_request:
 
 concurrency:
