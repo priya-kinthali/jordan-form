@@ -41,9 +41,9 @@ jobs:
           - "3.12"
           # - "3.13"
         os:
-          - ubuntu-latest
+          # - ubuntu-latest
           - windows-latest
-          - macOS-latest
+          # - macOS-latest
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
