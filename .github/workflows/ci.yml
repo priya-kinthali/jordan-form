@@ -39,11 +39,11 @@ jobs:
           - "3.10"
           - "3.11"
           - "3.12"
-          # - "3.13"
+          - "3.13"
         os:
-          - ubuntu-latest
+          # - ubuntu-latest
           - windows-latest
-          - macOS-latest
+          # - macOS-latest
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -51,6 +51,12 @@ jobs:
         id: setup-python
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Verify Tcl directory contents
+        run: |
+          echo "Python version: $(python --version)"
+          echo "Checking Tcl directory contents..."
+          $PYTHON_VERSION=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}')")
+          dir C:\hostedtoolcache\windows\Python\$PYTHON_VERSION\x64\tcl\tcl8.6
       - uses: astral-sh/setup-uv@6b9c6063abd6010835644d4c2e1bef4cf5cd0fca # v6
       - name: Verify Tcl directory contents
         run: |
