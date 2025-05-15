@@ -52,6 +52,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - uses: astral-sh/setup-uv@6b9c6063abd6010835644d4c2e1bef4cf5cd0fca # v6
+      - name: Verify Tcl directory contents
+        run: |
+          echo "Python version: $(python --version)"
+          echo "Checking Tcl directory contents..."
+          $PYTHON_VERSION=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}')")
+          dir C:\hostedtoolcache\windows\Python\$PYTHON_VERSION\x64\tcl\tcl8.6
+        shell: pwsh
       - run: uv sync --no-python-downloads
         shell: bash
       - run: uv run pytest
