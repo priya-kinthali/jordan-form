@@ -1,0 +1,18 @@
+name: Composite Action
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest, macos-13]
+        # python-version: ['3.14.0-beta.1', '3.14.0-alpha.1', "3.13.0-rc.3"]
+        
+       
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up python
+        uses: priya-kinthali/sample-python@test-973
