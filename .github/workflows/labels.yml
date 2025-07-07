@@ -1,11 +1,10 @@
 name: Sync Github labels
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/**"
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
 
 jobs:
   labels:
